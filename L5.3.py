@@ -41,6 +41,7 @@ while True:
     # 将图像从 BGR 颜色（OpenCV 使用）转换为 RGB 颜色（face_recognition使用）
     rgb_small_frame = small_frame[:, :, ::-1]
 
+
     #仅处理每隔一帧视频以节省时间
     if process_this_frame:
         # Find all the faces and face encodings in the current frame of video
