@@ -28,7 +28,7 @@ lxy_face_encoding = face_recognition.face_encodings(lxy_image)[0]
 wxh_image = face_recognition.load_image_file("./image/4.jpg")
 wxh_face_encoding = face_recognition.face_encodings(wxh_image)[0]
 
-zql_image = face_recognition.load_image_file("./image/4.jpg")
+zql_image = face_recognition.load_image_file("./image/5.jpg")
 zql_face_encoding = face_recognition.face_encodings(zql_image)[0]
 
 # Create arrays of known face encodings and their names
@@ -72,7 +72,7 @@ while True:
         face_names = []
         for face_encoding in face_encodings:
             # See if the face is a match for the known face(s)
-            matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
+            matches = face_recognition.compare_faces(known_face_encodings, face_encoding,tolerance=0.38)
             name = "Unknown"
             
 

@@ -51,7 +51,7 @@ while True:
         face_names = []
         for face_encoding in face_encodings:
             #查看人脸是否与已知人脸匹配
-            matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
+            matches = face_recognition.compare_faces(known_face_encodings, face_encoding,tolerance=0.38)
             name = "Unknown"
             
 
