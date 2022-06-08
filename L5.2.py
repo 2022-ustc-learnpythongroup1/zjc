@@ -14,7 +14,7 @@ c=0
 f=0
 
 #加载示例图片并学习如何识别它
-jyh_image = face_recognition.load_image_file("./image/5.jpg")
+jyh_image = face_recognition.load_image_file("./image/1.jpg")
 jyh_face_encoding = face_recognition.face_encodings(jyh_image)[0]
 
 # 创建已知人脸编码及其名称的数组
@@ -50,10 +50,9 @@ while True:
         face_names = []
         for face_encoding in face_encodings:
             #查看人脸是否与已知人脸匹配
-            matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
+            matches = face_recognition.compare_faces(known_face_encodings, face_encoding,tolerance=0.38)
             name = "Unknown"
             
-
             # 如果在known_face_encodings中找到匹配项，只需使用第一个匹配项即可。
             # 如果匹配项中为 True：
             # first_match_index = matches.index（True）
@@ -71,13 +70,8 @@ while True:
 
     process_this_frame = not process_this_frame
 
-o
-
-    # 显示生成的图像
-    cv2.imshow('Video', frame)
-
     # 点击键盘上的“q”退出！
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if c>=20 or f>=2:
         break
 if c>f:
     print("1")
