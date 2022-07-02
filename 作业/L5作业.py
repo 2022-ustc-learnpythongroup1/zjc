@@ -13,7 +13,7 @@ c=0
 f=0
 
 #加载示例图片并学习如何识别它
-jyh_image = face_recognition.load_image_file("./image/2.jpg")
+jyh_image = face_recognition.load_image_file("./image/1.jpg")
 jyh_face_encoding = face_recognition.face_encodings(jyh_image)[0]
 
 # 创建已知人脸编码及其名称的数组
@@ -21,7 +21,7 @@ known_face_encodings = [
     jyh_face_encoding
 ]
 known_face_names = [
-    "zang jingcheng"
+    "jiang yuhang"
 ]
 
 # 初始化一些变量
