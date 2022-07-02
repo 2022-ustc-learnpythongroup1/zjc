@@ -1,4 +1,3 @@
-
 import face_recognition
 import cv2
 import numpy as np
@@ -57,7 +56,6 @@ while True:
             # 如果匹配项中为 True：
             # first_match_index = matches.index（True）
             # 名称 = known_face_names[first_match_index]
-
             # 或者，使用与新面距离最小的已知人脸
             face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
             best_match_index = np.argmin(face_distances)
@@ -69,14 +67,17 @@ while True:
             face_names.append(name)
 
     process_this_frame = not process_this_frame
-
-    # 点击键盘上的“q”退出！
+    
+    #结束条件
     if c>=20 or f>=2:
         break
+
+#输出结果
 if c>f:
     print("1")
 else:
     print("0")
+
 # 释放网络摄像头
 video_capture.release()
 cv2.destroyAllWindows()
